@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "795878762527",
+    "firebase_url": "https://ceeanimal.firebaseio.com",
+    "project_id": "ceeanimal",
+    "storage_bucket": "ceeanimal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:795878762527:android:53c5e4fa9f7d6665ddcd2a",
+        "android_client_info": {
+          "package_name": "com.flutterthailand.ceeanimal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "795878762527-es5mbrjljh8p6p94t2e2e20lj7ta20fm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4RPw0S1TxnF3qebgJ6B-_wAN7-LXMBBE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "795878762527-es5mbrjljh8p6p94t2e2e20lj7ta20fm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
