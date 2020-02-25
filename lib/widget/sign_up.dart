@@ -1,5 +1,6 @@
 import 'package:ceeanimal/utility/my_constant.dart';
 import 'package:ceeanimal/utility/normal_dialog.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,7 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
 //Field
-  String name, email, password, address;
+  String name, email, password, address, uidUser;
 
 //Method
   Widget nameForm() {
@@ -30,7 +31,8 @@ class _SignUpState extends State<SignUp> {
   }
 
   Widget emailForm() {
-    return TextField(keyboardType: TextInputType.emailAddress,
+    return TextField(
+      keyboardType: TextInputType.emailAddress,
       onChanged: (value) {
         email = value.trim();
       },
@@ -107,11 +109,37 @@ class _SignUpState extends State<SignUp> {
         .createUserWithEmailAndPassword(email: email, password: password)
         .then((response) {
       print('Register Success');
+      insertUserToFireStore();
     }).catchError((response) {
       String title = response.code;
       String message = response.message;
       normalDialog(context, title, message);
     });
+  }
+
+  Future<void> insertUserToFireStore() async {
+    FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+    FirebaseUser firebaseUser = await firebaseAuth.currentUser();
+    uidUser = firebaseUser.uid;
+    print('uidUser = $uidUser');
+
+    UserUpdateInfo userUpdateInfo = UserUpdateInfo();
+    userUpdateInfo.displayName = name;
+    firebaseUser.updateProfile(userUpdateInfo);
+
+    Map<String, dynamic> map = Map();
+    map['Name'] = name;
+    map['Address'] = address;
+    map['Uid'] = uidUser;
+
+    Firestore firestore = Firestore.instance;
+    await firestore
+        .collection('User')
+        .document(uidUser)
+        .setData(map)
+        .then((response) {
+          Navigator.of(context).pop();
+        });
   }
 
   @override
