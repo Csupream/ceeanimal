@@ -4,6 +4,7 @@ class MyConstant {
   
 //Field
 List<String> banners = ['images/banner1.png'];
+List<String> categorys = ['Dog', 'Food','home'];
 
 Widget mySizebox = SizedBox(
   height: 10.0, 
