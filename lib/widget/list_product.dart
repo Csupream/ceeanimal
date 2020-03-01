@@ -87,8 +87,8 @@ class _ListProductState extends State<ListProduct> {
 
   Widget showPicture(int index) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.5,
-      height: MediaQuery.of(context).size.width * 0.4,
+      width: MediaQuery.of(context).size.width * 0.4, //0.5
+      height: MediaQuery.of(context).size.width * 0.3, //0.4
       padding: EdgeInsets.all(20.0),
       child: Image.network(pictures[index]),
     );
@@ -96,8 +96,8 @@ class _ListProductState extends State<ListProduct> {
 
   Widget showText(int index) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.5,
-      height: MediaQuery.of(context).size.width * 0.4,
+      width: MediaQuery.of(context).size.width * 0.6, //0.5
+      height: MediaQuery.of(context).size.width * 0.2, //0.4
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[

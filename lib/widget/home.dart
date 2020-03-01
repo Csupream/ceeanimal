@@ -46,7 +46,7 @@ class _HomeState extends State<Home> {
     Navigator.of(context).push(route);
   }
 
-  Widget dogGroup() {
+  Widget bangKaeoGroup() {
     return GestureDetector(
       onTap: () {
         routeToListProduct(categorys[0]);
@@ -58,10 +58,10 @@ class _HomeState extends State<Home> {
             Container(
               width: 80.0,
               height: 80.0,
-              child: Image.asset('images/dog.png'),
+              child: Image.asset('images/dog1.png'),
             ),
             Text(
-              'หมาไทยหลังอาน',
+              'บางแก้ว',
               style: MyConstant().titleH3,
             )
           ],
@@ -70,7 +70,7 @@ class _HomeState extends State<Home> {
     );
   }
 
-  Widget foodGroup() {
+  Widget saiberiaGroup() {
     return GestureDetector(
       onTap: () {
         routeToListProduct(categorys[1]);
@@ -82,10 +82,10 @@ class _HomeState extends State<Home> {
             Container(
               width: 80.0,
               height: 80.0,
-              child: Image.asset('images/food.png'),
+              child: Image.asset('images/dog2.png'),
             ),
             Text(
-              'Food',
+              'ไซบีเรีย',
               style: MyConstant().titleH3,
             )
           ],
@@ -94,7 +94,7 @@ class _HomeState extends State<Home> {
     );
   }
 
-  Widget homeGroup() {
+  Widget thaiRidgebackGroup() {
     return GestureDetector(
       onTap: () {
         routeToListProduct(categorys[2]);
@@ -106,10 +106,10 @@ class _HomeState extends State<Home> {
             Container(
               width: 80.0,
               height: 80.0,
-              child: Image.asset('images/home.png'),
+              child: Image.asset('images/dog3.png'),
             ),
             Text(
-              'home',
+              'ไทยหลังอาน',
               style: MyConstant().titleH3,
             )
           ],
@@ -131,7 +131,7 @@ class _HomeState extends State<Home> {
   Widget showCategory() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: <Widget>[dogGroup(), foodGroup(), homeGroup()],
+      children: <Widget>[bangKaeoGroup(), saiberiaGroup(), thaiRidgebackGroup()],
     );
   }
 
@@ -294,7 +294,7 @@ class _HomeState extends State<Home> {
       drawer: showDrawer(),
       body: ListView(
         children: <Widget>[
-          MyConstant().mySizebox,
+          //MyConstant().mySizebox,
           showBanner(),
           MyConstant().mySizebox,
           showtitle('ชุุมชนนน้องหมา'),
