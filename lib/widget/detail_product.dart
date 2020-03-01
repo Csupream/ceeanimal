@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class DetailProduct extends StatefulWidget {
-  final String name, detail, pathUrl;
-  DetailProduct({Key key, this.name, this.detail, this.pathUrl})
+  final String name, detail, pathUrl, detail2;
+  DetailProduct({Key key, this.name, this.detail, this.pathUrl, this.detail2})
       : super(key: key);
 
   @override
@@ -11,7 +11,7 @@ class DetailProduct extends StatefulWidget {
 
 class _DetailProductState extends State<DetailProduct> {
   //Field
-  String name = '', detail, pathUrl;
+  String name = '', detail, pathUrl, detail2;
 
   //Method
   @override
@@ -20,6 +20,7 @@ class _DetailProductState extends State<DetailProduct> {
     super.initState();
     name = widget.name;
     detail = widget.detail;
+    detail2 = widget.detail2;
     pathUrl = widget.pathUrl;
   }
 
@@ -33,6 +34,10 @@ class _DetailProductState extends State<DetailProduct> {
 
   Widget showText(){
     return Text(detail);
+  
+  }
+  Widget showText2(){
+    return Text(detail2);
   }
 
   @override
@@ -42,7 +47,7 @@ class _DetailProductState extends State<DetailProduct> {
         title: Text('Detail $name'),
       ),
       body: ListView(
-        children: <Widget>[showImage(),showText(),],
+        children: <Widget>[showImage(),showText(),showText2()],
       ),
     );
   }

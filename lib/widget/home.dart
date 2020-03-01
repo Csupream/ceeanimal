@@ -61,7 +61,7 @@ class _HomeState extends State<Home> {
               child: Image.asset('images/dog.png'),
             ),
             Text(
-              'Dog',
+              'หมาไทยหลังอาน',
               style: MyConstant().titleH3,
             )
           ],
@@ -148,7 +148,7 @@ class _HomeState extends State<Home> {
         ? IconButton(
             tooltip: 'Sing In',
             icon: Icon(
-              Icons.fingerprint,
+              Icons.face,
               color: Colors.red,
             ),
             onPressed: () {
@@ -300,7 +300,7 @@ class _HomeState extends State<Home> {
           showtitle('ชุุมชนนน้องหมา'),
           showCategory(),
           MyConstant().mySizebox,
-          // showCategory(),
+          //showCategory(),
         ],
       ),
     );

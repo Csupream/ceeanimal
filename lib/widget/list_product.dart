@@ -22,7 +22,7 @@ class _ListProductState extends State<ListProduct> {
   List<String> details = List();
   List<String> pictures = List();
   List<String> codes = List();
-
+  List<String> details2 = List();
   List<ProductModel> productModels = List();
 
 //Method
@@ -49,6 +49,9 @@ class _ListProductState extends State<ListProduct> {
           String detail = snapshot.data['Detail'];
           detail = checkNull(detail);
 
+          String detail2 = snapshot.data['Detail2'];
+          detail2 = checkNull(detail2);
+
           String picture = snapshot.data['Image'];
           picture = checkNull(picture);
 
@@ -57,6 +60,7 @@ class _ListProductState extends State<ListProduct> {
 
           names.add(name);
           details.add(detail);
+          details2.add(detail2);
           pictures.add(picture);
           codes.add(code);
 
@@ -97,8 +101,7 @@ class _ListProductState extends State<ListProduct> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
-          Text(names[index]),
-          Text(details[index]),
+          
           Row(
             children: <Widget>[
               Text(
@@ -110,7 +113,12 @@ class _ListProductState extends State<ListProduct> {
           Row(
             children: <Widget>[
               Text(details[index]),
-            ],
+           ],
+          ),
+          Row(
+            children: <Widget>[
+              Text(details2[index]),
+           ],
           ),
         ],
       ),
@@ -142,6 +150,7 @@ class _ListProductState extends State<ListProduct> {
       return DetailProduct(
         name: productModels[index].name,
         detail: productModels[index].detail,
+        detail2: productModels[index].detail2,
         pathUrl: productModels[index].pathUrl,
       );
     });
