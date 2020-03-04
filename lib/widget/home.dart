@@ -4,7 +4,7 @@ import 'package:ceeanimal/widget/list_product.dart';
 import 'package:ceeanimal/widget/sign_in.dart';
 import 'package:ceeanimal/widget/sign_up.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
+//import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -131,7 +131,11 @@ class _HomeState extends State<Home> {
   Widget showCategory() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: <Widget>[bangKaeoGroup(), saiberiaGroup(), thaiRidgebackGroup()],
+      children: <Widget>[
+        bangKaeoGroup(),
+        saiberiaGroup(),
+        thaiRidgebackGroup(),
+      ],
     );
   }
 
@@ -294,13 +298,14 @@ class _HomeState extends State<Home> {
       drawer: showDrawer(),
       body: ListView(
         children: <Widget>[
-          //MyConstant().mySizebox,
+          MyConstant().mySizebox,
           showBanner(),
           MyConstant().mySizebox,
-          showtitle('ชุุมชนนน้องหมา'),
+          showtitle('ชุมชนน้องหมา'),
+          MyConstant().mySizebox,
           showCategory(),
           MyConstant().mySizebox,
-          //showCategory(),
+          //showCategory2(),
         ],
       ),
     );

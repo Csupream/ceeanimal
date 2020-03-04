@@ -13,7 +13,7 @@ Widget mySizebox = SizedBox(
  TextStyle titleH3 = TextStyle(
         fontSize: 16.0,
         fontWeight: FontWeight.bold,
-        color: Colors.blueGrey.shade700,
+        color: Colors.cyan.shade700,
       );
   TextStyle titleH1 = TextStyle(
         fontSize: 18.0,
@@ -23,7 +23,7 @@ Widget mySizebox = SizedBox(
       TextStyle titleH2 = TextStyle(
         fontSize: 24.0,
         fontWeight: FontWeight.bold,
-        color: Colors.blueGrey.shade700,
+        color: Colors.blueAccent.shade700,
       );
      
 

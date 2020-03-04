@@ -77,7 +77,7 @@ class _SingInState extends State<SingIn> {
 
   Widget showAppName() {
     return Text(
-      'Cee Animal',
+      'Farm Dog',
       style: MyConstant().titleH1,
     );
   }
@@ -101,8 +101,9 @@ class _SingInState extends State<SingIn> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              showLogo(),
+              showLogo(),            
               showAppName(),
+              MyConstant().mySizebox,
               emailForm(),
               passwordForm(),
               MyConstant().mySizebox,

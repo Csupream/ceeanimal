@@ -27,7 +27,7 @@ class _DetailProductState extends State<DetailProduct> {
   Widget showImage() {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height * 0.5, //0.5
+      height: MediaQuery.of(context).size.height * 0.4, //0.5
       child: Image.network(pathUrl),
     );
   }
