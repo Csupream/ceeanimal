@@ -6,7 +6,6 @@ import 'package:ceeanimal/widget/detail_product.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-
 class ListProduct extends StatefulWidget {
   final String category;
   ListProduct({Key key, this.category}) : super(key: key);
@@ -96,12 +95,11 @@ class _ListProductState extends State<ListProduct> {
 
   Widget showText(int index) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.6, //0.5
-      height: MediaQuery.of(context).size.width * 0.2, //0.4
+      width: MediaQuery.of(context).size.width * 0.5, //0.5
+      //height: MediaQuery.of(context).size.width * 0.2, //0.4
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
-          
           Row(
             children: <Widget>[
               Text(
@@ -112,13 +110,19 @@ class _ListProductState extends State<ListProduct> {
           ),
           Row(
             children: <Widget>[
-              Text(details[index]),
-           ],
+              Container(
+                width: MediaQuery.of(context).size.width * 0.5,
+                child: Text(details[index]),
+              ),
+            ],
           ),
           Row(
             children: <Widget>[
-              Text(details2[index]),
-           ],
+              Container(
+                width: MediaQuery.of(context).size.width * 0.5,
+                child: Text(details2[index]),
+              ),
+            ],
           ),
         ],
       ),
@@ -144,7 +148,7 @@ class _ListProductState extends State<ListProduct> {
     );
   }
 
- void routeToDetail(int index, BuildContext context) {
+  void routeToDetail(int index, BuildContext context) {
     MaterialPageRoute route =
         MaterialPageRoute(builder: (BuildContext buildContext) {
       return DetailProduct(
@@ -184,15 +188,13 @@ class _ListProductState extends State<ListProduct> {
       }
 
       showStatus(status, string.toString());
-
     } catch (e) {}
   }
 
-void showStatus(bool status, String code){
+  void showStatus(bool status, String code) {
     if (status) {
       normalDialog(context, 'No Code', 'No Code = $code in myDatabase');
-    } else {
-    }
+    } else {}
   }
 
   @override
