@@ -293,7 +293,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: Text('Home', style: MyConstant().titleH4),
       ),
       drawer: showDrawer(),
       body: ListView(

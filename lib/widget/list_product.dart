@@ -202,7 +202,8 @@ class _ListProductState extends State<ListProduct> {
     return Scaffold(
       appBar: AppBar(
         actions: <Widget>[readCodeButton()],
-        title: Text('List $currentCategory'),
+        title: Text('List $currentCategory',style: MyConstant().titleH4,),
+         
       ),
       body: names.length == 0 ? showProcess() : showListView(),
     );
