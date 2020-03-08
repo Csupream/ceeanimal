@@ -305,7 +305,7 @@ class _HomeState extends State<Home> {
           MyConstant().mySizebox,
           showCategory(),
           MyConstant().mySizebox,
-          //showCategory2(),
+          // showCategory2(),
         ],
       ),
     );
